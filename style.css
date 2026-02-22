@@ -9,10 +9,11 @@
     }
 
     html {
-      background-image: url('bigger.jpg');
+      background-image: url('Logo.png');
       background-repeat: no-repeat;
-      background-position: center; 
+      background-position: center center; 
       background-attachment: fixed;
-      background-size: cover;
+      background-size: contain;
+      opacity: 0.8;
     }
 
