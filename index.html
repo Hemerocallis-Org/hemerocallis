@@ -4,8 +4,12 @@
   <meta charset="utf-8">
   <title>Hemerocallis</title>
   <style>
-    html, body { margin: 0; }
+    html, body {
+      margin: 0;
+      height: 100%;
+    }
 
+    /* Header at the top */
     .Header {
       height: 50px; 
       background-image: url('Header.png');
@@ -14,28 +18,26 @@
       background-size: auto 50px; 
     }
 
-   body {
-  background: url('logo.png') no-repeat center center fixed;
-  background-size: cover;
-}
+    /* Main section with Logo as background */
+    body {
+      /* Background image */
+      background-image: url('Logo.png');
+      background-repeat: no-repeat;       /* don’t tile the image */
+      background-position: top center;    /* horizontally center, top vertically */
+      background-size: contain;           /* scale to fit width or height */
+      background-attachment: scroll;      /* scrolls with the page */
+      min-height: 200vh;                  /* make page taller so you can scroll */
+    }
 
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: inherit;
-  opacity: 0.5;
-  pointer-events: none;
-  z-index: -1;
-}
+    /* Optional: Main content placeholder */
+    .Main {
+      height: 2000px; /* example content height to show scroll effect */
+    }
 
   </style>
 </head>
 <body>
   <div class="Header"></div>
   <div class="Main"></div>
-    
-</html> 
+</body>
+</html>
