@@ -14,10 +14,21 @@
       background-size: auto 50px; 
     }
 
-    html {
-      background-image: url('Logo.png');
-    }
+   body {
+  background: url('logo.png') no-repeat center center fixed;
+  background-size: cover;
+  opacity: 0.8;
+}
 
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  background: url('logo.png') no-repeat center center;
+  background-size: cover;
+  pointer-events: none;
+  z-index: -1;
+}
 
   </style>
 </head>
