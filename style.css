@@ -3,7 +3,7 @@
     html {
       background-image: url('Logo.png');
       background-repeat: no-repeat;
-      background-position: center center; 
+      background-position: center; 
       background-attachment: fixed;
       background-size: cover;
       opacity: 0.8;
