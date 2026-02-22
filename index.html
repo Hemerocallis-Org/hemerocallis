@@ -16,28 +16,31 @@
       background-repeat: no-repeat;
       background-position: top center; 
       background-size: auto 50px; 
+      z-index: 10;
+      position: relative;
     }
 
-    /* Main section with Logo as background */
-    body {
-      /* Background image */
+    /* Full-page logo background */
+    .LogoBackground {
+      height: 100vh; /* full viewport height */
+      width: 100%;
       background-image: url('Logo.png');
-      background-repeat: no-repeat;       /* don’t tile the image */
-      background-position: top center;    /* horizontally center, top vertically */
-      background-size: contain;           /* scale to fit width or height */
-      background-attachment: scroll;      /* scrolls with the page */
-      min-height: 200vh;                  /* make page taller so you can scroll */
+      background-repeat: no-repeat;
+      background-position: center center; /* perfectly center */
+      background-size: contain; /* scales to fit viewport */
     }
 
-    /* Optional: Main content placeholder */
+    /* Optional content below logo */
     .Main {
-      height: 2000px; /* example content height to show scroll effect */
+      height: 2000px; /* example content to scroll */
+      background-color: white;
     }
 
   </style>
 </head>
 <body>
   <div class="Header"></div>
+  <div class="LogoBackground"></div>
   <div class="Main"></div>
 </body>
 </html>
