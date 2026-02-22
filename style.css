@@ -1,0 +1,18 @@
+    html, body { margin: 0; }
+
+    .Header {
+      height: 50px; 
+      background-image: url('Header.png');
+      background-repeat: no-repeat;
+      background-position: top center; 
+      background-size: auto 50px; 
+    }
+
+    html {
+      background-image: url('Logo.png');
+      background-repeat: no-repeat;
+      background-position: center; 
+      background-attachment: fixed;
+      background-size: cover;
+    }
+
