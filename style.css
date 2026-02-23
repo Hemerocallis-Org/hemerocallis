@@ -3,7 +3,7 @@ margin: 0;
 }
 
 #background {
-background-image: url("Hemero.png");
+background-image: url("Hero.gif");
 height: 100vh;
 width: 100%;
 background-size: cover;
@@ -11,5 +11,19 @@ background-position: center center;
 position: fixed;
 top: 0;
 z-index: -1;
-opacity: 0.9;
+opacity: 0.5;
+}
+html {
+    background-color: black;
+}
+
+#top {
+position: fixed;
+position:center center;
+height: 60px;
+width: 100%;
+background-color: whitesmoke;
+
+position: absolute;
+top: 0;
 }
