@@ -1,29 +1,340 @@
-body{
-margin: 0;
-}
-
-#background {
-background-image: url("Hero.gif");
-height: 100vh;
-width: 100%;
-background-size: cover;
-background-position: center center;
-position: fixed;
-top: 0;
-z-index: -1;
-opacity: 0.5;
-}
-html {
-    background-color: black;
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica, "Helvetica Neue", Liberation Sans, Arial, sans-serif;
+  overflow-x: hidden;
 }
 
 #top {
-position: fixed;
-position:center center;
-height: 60px;
-width: 100%;
-background-color: whitesmoke;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  padding-left: 115px;
+  z-index: 10;
+}
 
-position: absolute;
-top: 0;
+#top img {
+  height: 125px;
+  width: auto;
+  margin-left: -30px;
+}
+
+#top img.text {
+  height: 350px;
+  width: auto;
+  margin-left: -170px;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('Hero.gif') center top / cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 10vw;
+  color: white;
+  text-shadow: 0 0 8px rgba(0,0,0,0.7);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.3);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 1;
+}
+
+.headertext, .flavor, .separator {
+  position: relative;
+  z-index: 2;
+}
+
+.headertext {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0 0 1rem 0;
+  color: #F5F5F5;
+  text-shadow: 0 0 8px rgba(0,0,0,0.8);
+}
+
+.headertext span {
+  display: block;
+  white-space: nowrap;
+}
+
+.flavor {
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
+  opacity: 0.9;
+  max-width: 700px;
+  line-height: 1.5;
+  margin-top: 1rem;
+  color:#F5F5F5;
+  text-shadow: 0 0 8px rgba(0,0,0,0.8);
+}
+
+.flavor span {
+  text-decoration: underline;
+}
+
+.separator {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: black;
+  z-index: 2;
+}
+
+.sec2 {
+  max-width: 800px;
+  line-height: 1.6;
+  padding-left: 250px;
+  padding-top:60px;
+  background-color: #ffffff;
+  padding-right: 500px;
+}
+
+.sec2 h2 {
+  font-size: 24px;
+  margin: 0 0 0 80px;
+  color: #3b3b3b;
+}
+
+.sec2 p {
+  font-size: 18px;
+  margin: 0;
+  margin-left: 80px;
+  text-align: left;
+  color: black;
+  padding-bottom:50px;
+}
+
+.sec2 h3 {
+  font-size: 20px;
+  margin: 0 0 10px 80px;
+  color: #3b3b3b;
+  opacity:0.8;
+}
+
+main p:not(.flavor)::first-letter {
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 1;
+  margin-right: 1px;
+  color: inherit;
+  text-shadow: 0 0 6px rgba(0,0,0,0.1);
+}
+
+/*KEWL ASS UPDATING COUNTER*/
+
+.counter {
+  padding: 10px 0;
+  background-color: black;
+}
+
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .stats-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .stats-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.stat {
+  padding: 20px;
+  color:whitesmoke;
+  text-align: center;
+}
+
+.stat div:first-child {
+  display: inline-block;
+  min-width: 5ch;
+  line-height: 1.1;
+  white-space: nowrap;
+  font-weight: bold;
+  font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+.stats-container .stat .odometer {
+  display: inline-block;
+  font-size: 3rem;
+  line-height: 1.1;
+}
+
+.stat .odometer .odometer-digit,
+.stat .odometer .odometer-value {
+  font-size: 3rem;
+  line-height: 1.1;
+  display: inline-block;
+  white-space: nowrap;
+  font-weight: bold;
+  font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+.type {
+  font-size: 1rem;
+  margin-top: 10px;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+  display: block;
+  text-align: center;
+  position: relative;
+  left: 25px;
+}
+
+.odometer-wrapper {
+  display: inline-block;
+  position: relative;
+  overflow: visible;
+}
+
+.glitch {
+  animation: glitchShift 0.1s infinite;
+}
+
+@keyframes glitchShift {
+  0%   { transform: translate(0, 0); }
+  20%  { transform: translate(-6px, 3px); }
+  40%  { transform: translate(6px, -3px); }
+  60%  { transform: translate(-4px, 5px); }
+  80%  { transform: translate(4px, -5px); }
+  100% { transform: translate(0, 0); }
+}
+.odometer.glitch {
+  animation: glitchShift 0.25s infinite;
+}
+
+/*Info start*/
+p.acrostic {
+  white-space: normal;
+  font-size: 20px;
+  line-height: 1.8;
+  max-width: 900px;
+  margin: 40px auto;
+  text-align: justify; 
+  color: #2c2c2c;
+  font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
+}
+
+p.acrostic::first-letter {
+  font-weight: bold;
+  font-size: 28px;
+}
+
+h4 {
+  font-size: 32px;
+  color: #3b3b3b;
+  text-align: center;
+  margin: 60px 0 20px 0;
+  line-height: 1.2;
+  font-weight: 700;
+  text-shadow: 0 0 6px rgba(0,0,0,0.3); 
+  font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
+}
+
+@media (max-width: 900px) {
+  p.acrostic {
+    font-size: 18px;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  h4 {
+    font-size: 28px;
+  }
+}
+
+.info {
+  background-color: #f5f5f5;
+  padding: 60px 80px;
+  margin: 0;
+  border-radius: 8px;
+}
+
+main h2,
+main h3,
+main h4 {
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  color: #3b3b3b;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.feature-quote {
+  font-size: 28px;
+  font-style: italic;
+  color: #2c2c2c;
+  line-height: 1.6;
+  max-width: 850px;
+  margin: 40px auto;
+  text-align: justify;
+  border-left: 4px solid #3b3b3b;
+  padding-left: 16px;
+  position: relative;
+}
+
+.feature-quote .quote-author {
+  display: block;
+  font-size: 24px;
+  text-align: right;
+  margin-top: 12px;
+  font-style: normal;
+  color: #3b3b3b;
+}
+
+/*Linkz*/
+.header-chat-link {
+  margin-right: 50px;
+  color: #c8a22a;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
+  transition: all 0.2s ease-in-out;
+}
+
+.header-chat-link:hover {
+  color: #ffd93b;
+  text-shadow: 0 0 6px rgba(255, 255, 200, 0.5);
+}
+
+.footer-note {
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 14px;
+  border-top: 2px solid #333;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
 }
